@@ -1,0 +1,30 @@
+{
+  "name": "vetin-app",
+  "version": "1.0.0",
+  "description": "a vet appliication",
+  "main": "server.js",
+  "scripts": {
+    "devstart": " nodemon server.js"
+  },
+  "keywords": [
+    "ap",
+    "vet",
+    "pet",
+    "animal",
+    "node",
+    "express"
+  ],
+  "author": "Caleb Tolase",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "express-ejs-layouts": "^2.5.1",
+    "mongoose": "^8.2.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.0"
+  }
+}
