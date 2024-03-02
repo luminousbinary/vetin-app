@@ -40,8 +40,8 @@ db.once("open", () => console.log("Database connected"));
 const appointmentRoute = require("./controller/appointment-controller");
 
 app.use("/appointment", appointmentRoute);
-PORT = process.env.PORT|| 3000;
+const PORT = process.env.PORT || 3000;
 
-app.listen(port, () => {
-  console.log(`Connected to server at port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Connected to server at port ${PORT}`);
 });
