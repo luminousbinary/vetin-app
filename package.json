@@ -4,7 +4,11 @@
   "description": "a vet appliication",
   "main": "server.js",
   "scripts": {
-    "devstart": " nodemon server.js"
+    "devstart": " nodemon server.js",
+    "build": " node server.js",
+    "start": "node server.js"
+
+
   },
   "keywords": [
     "ap",
