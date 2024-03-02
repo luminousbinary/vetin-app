@@ -15,7 +15,7 @@
 // })
 
 // if (process.env.NODE_ENV !== "production") {
-require("dotenv").config();
+// require("dotenv").config();
 // }
 const express = require("express");
 const mongoose = require("mongoose");
@@ -31,7 +31,7 @@ app.use(express.json());
 app.use(expressLayout);
 app.use(express.static("public"));
 
-mongoose.connect(process.env.DATABASEURL);
+mongoose.connect('mongodb+srv://vet-in-admin:eECaaFywG9AF5yNV@vet-in.hulw6ux.mongodb.net/?retryWrites=true&w=majority&appName=vet-in')//process.env.DATABASEURL);
 // .then(() => console.log("Database connected"));
 
 const db = mongoose.connection;
