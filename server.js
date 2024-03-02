@@ -39,6 +39,9 @@ db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Database connected"));
 const appointmentRoute = require("./controller/appointment-controller");
 
+app.get('/',(req,res)=>{
+  res.send('hellp')
+})
 app.use("/appointment", appointmentRoute);
 const PORT = process.env.PORT || 3000;
 

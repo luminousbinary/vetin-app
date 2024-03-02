@@ -2,10 +2,10 @@
   "name": "vetin-app",
   "version": "1.0.0",
   "description": "a vet appliication",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "devstart": " nodemon index.js",
-    "start": "node index.js"
+    "devstart": " nodemon server.js",
+    "start": "node server.js"
 
 
   },
