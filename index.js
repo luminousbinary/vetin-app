@@ -14,9 +14,9 @@
 //   console.log(`Example app listening on port ${port}`)
 // })
 
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
+// if (process.env.NODE_ENV !== "production") {
+require("dotenv").config();
+// }
 const express = require("express");
 const mongoose = require("mongoose");
 const expressLayout = require("express-ejs-layouts");
@@ -39,9 +39,9 @@ db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Database connected"));
 const appointmentRoute = require("./controller/appointment-controller");
 
-app.get('/',(req,res)=>{
-  res.send('hellp')
-})
+app.get("/", (req, res) => {
+  res.send("hellp");
+});
 app.use("/appointment", appointmentRoute);
 const PORT = process.env.PORT || 3000;
 
@@ -49,4 +49,4 @@ app.listen(PORT, () => {
   console.log(`Connected to server at port ${PORT}`);
 });
 
-module.exports = app
+module.exports = app;
