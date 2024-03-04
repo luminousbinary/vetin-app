@@ -1,25 +1,10 @@
-// const  express = require("express")
-// const app = express()
-
-// app.set('view engine', 'ejs')
-
-// const port = 3000
-
-// // server page
-// app.get('/appointment', (req, res) => {
-//   res.render('index')
-// })
-
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`)
-// })
-
 // if (process.env.NODE_ENV !== "production") {
 // require("dotenv").config();
 // }
 const express = require("express");
 const mongoose = require("mongoose");
 const expressLayout = require("express-ejs-layouts");
+const appointmentRoute = require("./controller/appointment.controller");
 
 const app = express();
 
@@ -30,18 +15,19 @@ app.set("layout", "layout/layout");
 app.use(express.json());
 app.use(expressLayout);
 app.use(express.static("public"));
-
-mongoose.connect('mongodb+srv://vet-in-admin:eECaaFywG9AF5yNV@vet-in.hulw6ux.mongodb.net/?retryWrites=true&w=majority&appName=vet-in')//process.env.DATABASEURL);
-// .then(() => console.log("Database connected"));
+app.use(express.urlencoded({ extended: false }));
+mongoose.connect(
+  "mongodb+srv://vet-in-admin:eECaaFywG9AF5yNV@vet-in.hulw6ux.mongodb.net/?retryWrites=true&w=majority&appName=vet-in"
+);
 
 const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Database connected"));
-const appointmentRoute = require("./controller/appointment-controller");
 
 app.get("/", (req, res) => {
   res.send("hellp");
 });
+
 app.use("/appointment", appointmentRoute);
 const PORT = process.env.PORT || 3000;
 

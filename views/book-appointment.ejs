@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booka an Appointment</title>
+  </head>
+  <body>
+    <div>
+      <h1>Book an appointment</h1>
+      <div class="appointment form-wrapper">
+        <form action="">
+          <input type="text" placeholder="localton" />
+          <br />
+          <input
+            type="date"
+            value="2023-01-01T12:00"
+            name="apointdata"
+            id="apointdate"
+          />
+          <input type="time" value="" name="apointtime" id="apointtime" />
+          <br />
+          <input
+            type="date"
+            value="2023-01-01T12:00"
+            name="nextapointdate"
+            id="nextapointdate"
+          />
+          <input
+            type="time"
+            value=""
+            name="nextapointtime"
+            id="nextapointtime"
+          />
+          <br />
+          <label for="appointment-type">Select your appointment type:</label>
+          <select id="appointment-type">
+            <option value="apointtype1">appointment type 1</option>
+            <option value="apointtype2">appointment type 2</option>
+          </select>
+          <br />
+          <input type="text" placeholder="additional message?" />
+          <br>
+          <button type="submit">Book appointment</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
