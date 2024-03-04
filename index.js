@@ -4,7 +4,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const expressLayout = require("express-ejs-layouts");
-const appointmentRoute = require("./controller/appointment.controller");
+const appointmentRoute = require("./controllers/appointment.controller");
 
 const app = express();
 
