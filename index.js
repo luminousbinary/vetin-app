@@ -4,7 +4,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const expressLayout = require("express-ejs-layouts");
-const appointmentRoute = require("./controllers/appointment.controller");
+const appointmentRoute = require("./routes/index");
 
 const app = express();
 
@@ -24,11 +24,24 @@ const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Database connected"));
 
-app.get("/", (req, res) => {
-  res.send("hellp");
-});
+// const index = require('./routes/index');
+// const api = require('./routes/api/index');
 
-app.use("/appointment", appointmentRoute);
+// app.get("/", (req, res) => {
+//   res.send("hellp");
+// });
+
+app.use('/', appointmentRoute);
+// app.use('/api', api);
+
+// app.use("/appointment", appointmentRoute);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
