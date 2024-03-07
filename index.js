@@ -6,12 +6,15 @@ const mongoose = require("mongoose");
 const expressLayout = require("express-ejs-layouts");
 const appointmentRoute = require("./routes/index");
 
+// added cors so api can be accessabel from anywhere/network
+const cors = require('cors');
+
 const app = express();
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 app.set("layout", "layout/layout");
-
+app.use(cors());
 app.use(express.json());
 app.use(expressLayout);
 app.use(express.static("public"));
@@ -42,7 +45,7 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
   console.log(`Connected to server at port ${PORT}`);

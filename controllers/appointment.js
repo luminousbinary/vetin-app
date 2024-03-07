@@ -150,10 +150,12 @@ const appointmentController = {
       });
       console.log(" created appoint");
 
+      // // replace with mail chimp email sender
       // const nexmo = new Nexmo({
       //   apiKey: "YOUR_API_KEY",
       //   apiSecret: "YOUR_API_SECRET",
       // });
+
       let msg =
         reqBody.name +
         " " +
@@ -184,28 +186,7 @@ const appointmentController = {
       }
 
       console.log("then send message ::: ", msg);
-
-      // as((err, saved) => {
-      //   // Returns the saved appointment
-      //   // after a successful save
-      //   console.log(
-      //     "Returns the saved appointment after a successful save... "
-      //   );
-      //   Appointment.find({ _id: saved._id })
-      //     .populate("slots")
-      //     .exec((err, appointment) => res.json(appointment));
-      //   // const from = VIRTUAL_NUMBER;
-      //   // const to = RECIPIENT_NUMBER;
-
-      //   console.log("then send message ::: ", msg);
-      //   // nexmo.message.sendSms(from, to, msg, (err, responseData) => {
-      //   //   if (err) {
-      //   //     console.log(err);
-      //   //   } else {
-      //   //     console.dir(responseData);
-      //   //   }
-      //   // });
-      // });
+      
     } catch (error) {
       console.log(error);
       res.send(`Error : ${error}`);
